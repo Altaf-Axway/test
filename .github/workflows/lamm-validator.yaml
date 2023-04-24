@@ -1,0 +1,17 @@
+name: Lint
+on:
+  push:
+    paths:
+      - 'lamm/**'
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Get changed files
+        run: git diff --name-only ${{ github.base_ref }}...${{ github.head_ref }}
+      - name: Run linter
+        uses: github/super-linter@v4
+        with:
+          lint-staged: ${{ steps.changed-files.outputs.files }}
