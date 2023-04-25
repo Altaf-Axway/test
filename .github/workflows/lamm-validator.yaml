@@ -22,7 +22,7 @@ jobs:
         uses: github/super-linter@v4
         env:
           GITHUB_TOKEN: test
-          FILTER_REGEX_INCLUDE: lamm/**
+          FILTER_REGEX_INCLUDE: .*lamm/.*
         with:
           lint-staged: ${{ steps.changed-files.outputs.files }}
       - name: Set Success Status
