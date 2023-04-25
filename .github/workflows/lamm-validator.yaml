@@ -13,7 +13,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Get changed files
-        run: git diff --name-only ${{ github.base_ref }}...${{ github.head_ref }}
+        env:
+          BASE: ${{ github.base_ref }}
+          HEAD: ${{ github.head_ref }}
+        run: git diff --name-only $BASE...$HEAD
       - name: Run linter
         uses: github/super-linter@v4
         with:
