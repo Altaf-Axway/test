@@ -6,7 +6,7 @@ name: Lint
 on:
   push:
     paths:
-      - 'clusters/**/**/**/**/foundation/lamm/**'
+      - 'lamm/**'
 jobs:
   lint:
     runs-on: ubuntu-latest
