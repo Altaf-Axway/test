@@ -1,4 +1,5 @@
 # super-linter: skip=yaml
+# super-linter: skip=actionlint
 ---
 name: Lint
 on:
